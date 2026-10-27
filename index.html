@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>МЕСТО — отдых начинается здесь</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a class="logo" href="#">МЕСТО<span>.</span></a>
+        <nav><a href="#places">Куда пойти</a><a href="#how">Как это работает</a></nav>
+        <div class="headright">
+          <span>⌖ Мирный</span><a class="outline" href="#places">Найти место ↗</a>
+        </div>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="hero-content fade">
+            <div class="eyebrow">✳ Время для хороших моментов</div>
+            <h1>Отдых начинается<br />с <em>места.</em></h1>
+            <p>
+              Найдите атмосферное место для ужина, встречи с друзьями или ярких выходных — всё в
+              одном месте.
+            </p>
+          </div>
+        </section>
+        <form class="search" id="search">
+          <div class="field">
+            <label>ЧТО ИЩЕМ?</label><input id="query" placeholder="Название или место" />
+          </div>
+          <div class="field">
+            <label>КАТЕГОРИЯ</label
+            ><select id="select">
+              <option value="Все">Все категории</option>
+              <option>Рестораны</option>
+              <option>Кафе</option>
+              <option>Развлечения</option>
+              <option>Отдых</option>
+              <option>VR</option>
+              <option>Кинотеатры</option>
+              <option>Ночные клубы</option>
+              <option>PC-клубы</option>
+            </select>
+          </div>
+          <div class="field"><label>КОГДА?</label><input type="date" id="date" /></div>
+          <button>Найти место ↗</button>
+        </form>
+        <section class="section" id="places">
+          <div class="sectionhead">
+            <div>
+              <div class="eyebrow" style="color: #8d9d88">ИССЛЕДУЙТЕ НОВОЕ</div>
+              <h2>Куда пойдём?</h2>
+              <p>Реальные места Мирного, Республика Саха (Якутия)</p>
+            </div>
+            <a class="link" href="#cards">Все места ↗</a>
+          </div>
+          <div class="categories" id="categories">
+            <button class="chip" data-cat="VR">VR</button
+            ><button class="chip" data-cat="Кинотеатры">Кинотеатры</button
+            ><button class="chip" data-cat="Ночные клубы">Ночные клубы</button
+            ><button class="chip" data-cat="PC-клубы">PC-клубы</button
+            ><button class="chip active" data-cat="Все">✳ Все места</button
+            ><button class="chip" data-cat="Рестораны">🍽 Рестораны</button
+            ><button class="chip" data-cat="Кафе">☕ Кафе</button
+            ><button class="chip" data-cat="Развлечения">✦ Развлечения</button
+            ><button class="chip" data-cat="Отдых">♧ Отдых</button>
+          </div>
+          <div class="cards" id="cards"></div>
+        </section>
+        <section class="banner" id="how">
+          <div>
+            <div class="eyebrow" style="color: #c5e9a9">ПРОЩЕ, ЧЕМ КАЖЕТСЯ</div>
+            <h2>Меньше планов.<br />Больше моментов.</h2>
+            <p>
+              Выберите место, укажите удобное время и сохраните бронь. Хороший вечер начинается с
+              пары кликов.
+            </p>
+          </div>
+          <button class="primary" onclick="document.querySelector('#places').scrollIntoView()">
+            Выбрать место ↗
+          </button>
+        </section>
+      </main>
+      <footer>
+        <div>
+          <a class="logo" href="#" style="color: #263c2d">МЕСТО<span>.</span></a>
+          <p>Ваш следующий хороший день начинается здесь.</p>
+        </div>
+        <div>Учебный проект · 2026<br /><br />Выполнила Лиля Мороз</div>
+      </footer>
+    </div>
+    <dialog class="modal" id="modal">
+      <button class="close" aria-label="Закрыть" onclick="modal.close()">×</button>
+      <h2 id="modalTitle"></h2>
+      <p>Выберите дату и время для бронирования.</p>
+      <form id="booking">
+        <label class="notice">Дата</label><input type="date" id="bookDate" required /><label
+          class="notice"
+          >Время</label
+        ><select id="time">
+          <option>12:00</option>
+          <option>14:00</option>
+          <option>16:00</option>
+          <option>18:00</option>
+          <option>20:00</option></select
+        ><label class="notice">Ваше имя</label
+        ><input id="name" required placeholder="Как к вам обращаться?" /><button class="primary">
+          Сохранить бронь
+        </button>
+        <p class="notice">
+          Демонстрационная бронь сохраняется только в этом браузере и не отправляется заведению.
+        </p>
+      </form>
+    </dialog>
+    <dialog class="modal" id="success">
+      <h2>Всё готово ✨</h2>
+      <p id="successText"></p>
+      <button class="primary" onclick="success.close()">Отлично</button>
+    </dialog>
+    <script src="places.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
