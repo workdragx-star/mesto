@@ -1,7 +1,7 @@
 let cat = "Все",
   selected = "";
 const cards = document.querySelector("#cards");
-// Обновление карточек с учётом поиска и выбранной категории.
+
 function render() {
   let q = document.querySelector("#query").value.trim().toLowerCase();
   let list = places.filter(
@@ -18,7 +18,6 @@ function render() {
         .join("")
     : '<div class="empty">Ничего не нашли. Попробуйте другую категорию или запрос.</div>';
 }
-// Переключение категории и синхронизация фильтров.
 function setCat(c) {
   cat = c;
   document.querySelector("#select").value = c;
@@ -33,7 +32,6 @@ document.querySelector("#search").onsubmit = (e) => {
   setCat(document.querySelector("#select").value);
   document.querySelector("#places").scrollIntoView();
 };
-// Открытие формы для выбранного заведения.
 function openBook(n) {
   selected = n;
   document.querySelector("#modalTitle").textContent = n;
