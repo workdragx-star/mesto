@@ -45,7 +45,7 @@ const places = [
     address: "улица Фрунзе, 4",
     desc: "Кафе в Мирном. Часы работы, меню и возможность бронирования уточняйте у заведения.",
     url: "https://2gis.ru/mirnyj-yakutia-region/search/Ансор",
-    img: "images/ansor.png",
+    img: "images/Ansor.png",
     tag: "Мирный · РС(Я)",
     price: "Цены уточняйте",
   },
